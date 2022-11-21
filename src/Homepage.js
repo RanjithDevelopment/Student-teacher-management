@@ -9,11 +9,28 @@ function Hompage() {
   
   const [loginname, setLoginname] = useState("");
   const [loginstate, setLogin] = useState(false);
-  
+  const [seatch,setSearch]=useState(false);
+  const [apidata,setApidata]=useState([])
 
 
   //mounting phase of the component
- 
+  useEffect(() => {
+    async function getApiData() {
+        const result = await axios.get('https://6321f66582f8687273bdac1b.mockapi.io/users');
+        setApidata(result.data);
+    //finding the student in a  database
+
+    }
+    getApiData();
+}, []);
+
+let SearchedValues={
+  name:"",
+  age:"",
+  email:"",
+  course:""
+
+}
 
   const handlelogin = (text) => {
 
@@ -21,6 +38,27 @@ function Hompage() {
     setLogin("True");
 
 
+  }
+  
+  let s="";
+  const handleOnChange=(e)=>{
+s=e;
+
+  }
+  const handleSearch=()=>{
+    apidata.map((data)=>{
+if(s===data.name){
+  
+  SearchedValues={
+    name:data.name,
+    age:data.age,
+    email:data.email,
+    course:data.courses
+  }
+  console.log(SearchedValues);
+
+}
+    })
   }
   
   return (
@@ -40,14 +78,16 @@ function Hompage() {
                 <a className="nav-link active" aria-current="page" onClick={(e) => { handlelogin(e.target.innerHTML) }}>Student</a>
               </li>
             </ul>
-            <form className="d-flex">
-              <input className="form-control me-2" />
-              <button className=" btn btn-dark" >Search</button>
-            </form>
+            <input type="text" placeholder="student name" onChange={(e)=>handleOnChange(e.target.value)}/>
+              <button onClick={()=>handleSearch()}>search</button>            
+             
+              
+             
           </div>
         </div>
       </nav>
-
+     
+     
       {loginstate ? <Login login={loginname} /> : <></>}
     </>
 
