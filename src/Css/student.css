@@ -1,0 +1,28 @@
+body{
+    background-attachment: fixed;
+    background-color: cornsilk;
+    font-size: large;
+}
+.student{
+    margin: auto;
+  width: 50%;
+color: whitesmoke;
+  padding: 10px;
+  align-items: center;
+    height: 500px;
+    width: 1000px;
+    background-attachment: fixed;
+    background-color: rgba(228, 139, 139, 0.926);
+    box-shadow: 10px 10px;
+    border-radius: 25px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.text{
+    color: whitesmoke;
+    font-size: larger;
+    align-items: center;
+    
+}
