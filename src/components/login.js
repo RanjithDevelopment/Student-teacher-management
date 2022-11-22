@@ -5,13 +5,13 @@ import Typography from '@mui/joy/Typography';
 import TextField from '@mui/joy/TextField';
 import Button from '@mui/joy/Button';
 import axios from "axios";
-import {Link, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 // import Teacher from "./Teacher";
 // import Student from "./Student";
 function Login({login}){
   const navigate=useNavigate();
   //Mouting Pahse of the login component
-  let logedUser=login;
+  
   
   useEffect(()=>{
    async function fetchdata(){
@@ -44,13 +44,13 @@ function Login({login}){
   const[user,setUser]=useState(false);
 //to handle the login process
   const handlelogin=()=>{
-    const abc = apidata.map((reply)=>{
+   const api= apidata.map((reply)=>{
     
       if(logindata.email===reply.email&&logindata.name===reply.name){
       setUser(!user);
       let a=reply.id;
      
-       navigate(`/${login}/${a}`);
+      return  navigate(`/${login}/${a}`);
        
       }
        else{
@@ -111,7 +111,7 @@ setlogindata({ ...logindata, [e.target.name]: e.target.value, error });
             name="email"
             type="email"
            onChange={(e)=>commonchange(e)}
-            
+            value={logindata.email}
             placeholder="ranjith@guvi.in"
             // pass down to FormLabel as children
             label="Email"
@@ -119,7 +119,8 @@ setlogindata({ ...logindata, [e.target.name]: e.target.value, error });
       <span style={{ color: 'red' }}>{logindata.error.email}</span>
           <TextField
             name="name"
-            type="name"
+            type="text"
+            value={logindata.name}
             onChange={(e)=>commonchange(e)}
             placeholder="name"
             label="name"

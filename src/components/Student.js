@@ -3,7 +3,7 @@ import axios from "axios";
 import '../Css/student.css'
 import { useParams } from "react-router-dom";
 import AspectRatio from '@mui/joy/AspectRatio';
-import {Box,Typography,Card,Button} from '@mui/joy';
+import {Typography,Card} from '@mui/joy';
 //import Button from '@mui/joy/Button';
 //import Card from '@mui/joy/Card';
 import IconButton from '@mui/joy/IconButton';

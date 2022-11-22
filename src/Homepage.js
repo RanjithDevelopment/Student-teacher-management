@@ -9,7 +9,7 @@ function Hompage() {
   
   const [loginname, setLoginname] = useState("");
   const [loginstate, setLogin] = useState(false);
-  const [seatch,setSearch]=useState(false);
+ 
   const [apidata,setApidata]=useState([])
 
 
@@ -45,21 +45,21 @@ let SearchedValues={
 s=e;
 
   }
-  const handleSearch=()=>{
-    apidata.map((data)=>{
-if(s===data.name){
+//   const handleSearch=()=>{
+//     apidata.map((data)=>{
+// if(s===data.name){
   
-  SearchedValues={
-    name:data.name,
-    age:data.age,
-    email:data.email,
-    course:data.courses
-  }
-  console.log(SearchedValues);
+//   SearchedValues={
+//     name:data.name,
+//     age:data.age,
+//     email:data.email,
+//     course:data.courses
+//   }
+//   console.log(SearchedValues);
 
-}
-    })
-  }
+// }
+//     })
+//   }
   
   return (
     <>
@@ -79,7 +79,7 @@ if(s===data.name){
               </li>
             </ul>
             <input type="text" placeholder="student name" onChange={(e)=>handleOnChange(e.target.value)}/>
-              <button onClick={()=>handleSearch()}>search</button>            
+              <button >search</button>            
              
               
              

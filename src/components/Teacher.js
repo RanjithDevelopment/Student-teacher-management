@@ -2,12 +2,12 @@ import React,{useEffect,useState}from 'react';
 import axios from 'axios';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
+// import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -21,7 +21,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
 import Hompage from '../Homepage';
-import { withTheme } from '@emotion/react';
+
 
  function Teacher(){
     let formvalues = {
@@ -53,7 +53,7 @@ import { withTheme } from '@emotion/react';
        
         getapidata();
       }, []);
-      let abc=[apidata];
+      
       //to handle the editoperation here is the function
       const HandleEdit = (id) => {
         const selecteddata = apidata.filter((row) => row.id === id)[0];
@@ -68,7 +68,7 @@ import { withTheme } from '@emotion/react';
       const handlesubmit = async (event) => {
         event.preventDefault();
         const errorkeys = Object.keys(formdata).filter((key) => {
-          if (formdata[key] === "" && key != "error" && key != "id") {
+          if (formdata[key] === "" && key !== "error" && key !== "id") {
             return key
           }
     
