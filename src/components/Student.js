@@ -56,8 +56,8 @@ function Student() {
                 <Grid  container spacing={2}>
 <Grid item xs={4}>
 <Card  variant="outlined" sx={{ width: 320 }} >
-  <Typography level="h2" fontSize="md" sx={{ mb: 0.5 }}>
-  <h1 className="text">student course : {course}</h1>
+  <Typography fontSize="md" sx={{ mb: 0.5 }}>
+  student course : {course}
   </Typography>
   <Typography level="body2"></Typography>
   <IconButton

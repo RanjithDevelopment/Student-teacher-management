@@ -20,9 +20,9 @@ function Login({login}){
     
       setapidata(apiResponse.data);
       }else{
-        const apiResponse=await axios.get('https://6321f66582f8687273bdac1b.mockapi.io/users')
+        const apiResponse1=await axios.get('https://6321f66582f8687273bdac1b.mockapi.io/users')
  
-        setapidata(apiResponse.data);
+        setapidata(apiResponse1.data);
       }
     }
     fetchdata();
@@ -60,7 +60,7 @@ function Login({login}){
       });
       
 
-  }
+  };
 // here to get the values from input field 
   const commonchange=(e)=>{
 let error={...logindata.error}
@@ -101,7 +101,7 @@ setlogindata({ ...logindata, [e.target.name]: e.target.value, error });
         >
           <div>
             <Typography level="h4" component="h1">
-              <b>Welcome To {login} Login !!</b><br/>
+              <p>Welcome To {login} Login !!</p><br/>
              
             </Typography>
             <Typography level="body2">Sign in to continue.</Typography>
